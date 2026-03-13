@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+
+  --cor-primary: #8f4c38;
+  --cor-onPrimary: #fff;
+
+  --cor-surface: #fff8f6;
+  --cor-surface-container: #fceae5;
+  --cor-onSurface: #231917;
+
+}
+
+body {
+  background-color: var(--cor-surface);
+  color: var(--cor-onSurface);
+  display: flex;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center; /* alinhar no eixo do conteúdo (coluna) */
+
+  padding: 0px 1rem; /* root font-size 16px */
+}
+
+main > img {
+  height: 10rem;
+  width: 10rem;
+
+  margin: 0 auto;
+}
+
+main > h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+main > input[type="number"],
+input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+main > button {
+  background-color: var(--cor-primary);
+  border: none;
+  border-radius: 0.5rem;
+
+  color: var(--cor-onPrimary);
+  padding: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    /* border: 1px solid var(--cor-primary); */
+    background-color: var(--cor-surface-container);
+    border-radius: 0.75rem;
+    margin: 15vh auto;
+    max-width: 500px;
+  }
+  main> button{
+    margin: 0 auto;
+    width: 10rem;
+  }
+}
