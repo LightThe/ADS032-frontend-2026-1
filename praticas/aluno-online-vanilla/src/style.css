@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+
+  --cor-primary: #415f91;
+  --cor-on-primary: #fff;
+  --cor-primary-container: #d6e3ff;
+  --cor-on-primary-container: #284777;
+  --cor-surface: #f9f9ff;
+  --cor-surface-container: #ededf4;
+  --cor-on-surface: #191c20;
+  --cor-outline-variant: #c4c6d0;
+}
+
+body {
+  background-color: var(--cor-surface);
+  color: var(--cor-on-surface);
+  display: flex;
+}
+
+aside {
+  background-color: var(--cor-primary-container);
+  color: var(--cor-on-primary-container);
+  display: none;
+  height: 100vh;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  width: 20rem;
+}
+
+aside > header {
+  align-items: center;
+  display: flex;
+}
+
+aside > header > h1 {
+  font-size: 1.5rem;
+}
+
+aside > nav {
+  font-size: 1rem;
+  margin: 2rem;
+}
+
+aside li {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+main {
+  flex: 1;
+  margin: 1rem;
+}
+
+main > header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+main > header > img {
+  height: 3rem;
+  width: 3rem;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  height: 100vh;
+  margin-top: 2rem;
+}
+
+article {
+  border: 1px solid var(--cor-outline-variant);
+  border-radius: 0.5rem;
+}
+
+article > h3 {
+  background-color: var(--cor-primary-container);
+  color: var(--cor-on-primary-container);
+  padding: 0.5rem 1rem;
+}
+
+article > ul {
+  list-style-type: none;
+  padding: 1rem;
+}
+
+article li {
+  margin-top: 0.5rem;
+}
+
+@media (width > 768px) {
+  aside {
+    display: block;
+  }
+
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
