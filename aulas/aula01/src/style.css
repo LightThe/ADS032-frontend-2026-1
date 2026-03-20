@@ -10,10 +10,12 @@
 
   --cor-primary: #8f4c38;
   --cor-onPrimary: #fff;
-
   --cor-surface: #fff8f6;
   --cor-surface-container: #fceae5;
   --cor-onSurface: #231917;
+  --cor-error-container: #ffdad6;
+  --cor-on-error-container: #93000a;
+  --cor-outline: #85736e;
 
 }
 
@@ -50,8 +52,10 @@ main > input[type="number"],
 input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
   padding: 0.5rem;
+}
+main>label{
+  margin-top: 1rem;
 }
 
 main > button {
@@ -61,6 +65,15 @@ main > button {
 
   color: var(--cor-onPrimary);
   padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+main > p{
+  background-color: var(--cor-error-container);
+  color: var(--cor-on-error-container);
+  border: 1px solid var(--cor-outline);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -72,7 +85,7 @@ main > button {
     max-width: 500px;
   }
   main> button{
-    margin: 0 auto;
+    margin: 1rem auto 0 auto;
     width: 10rem;
   }
 }
