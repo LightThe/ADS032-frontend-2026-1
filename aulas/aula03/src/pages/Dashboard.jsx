@@ -1,36 +1,29 @@
 import Card from "../components/Card";
 import Layout from "./Layout";
 
-function Dashboard(){
-    return (
+function Dashboard() {
+  const avisos = ["Eleição para representante", "Participe do IESB-SE"];
+
+  const datas = [
+    "23/04 - Avaliação P1",
+    "04/05 - Transferência de Curso",
+    "07/06 - Renovação de Matrícula",
+  ];
+
+  const disciplinas = [
+    "Construção de Frontend",
+    "Devops",
+    "BI e Data Warehousing",
+  ];
+
+  return (
     <>
-      <Layout>
-        <h2>Bem-vindo ao portal do aluno</h2>
-        <section>
-          <Card title="Mural de Avisos">
-            <ul>
-              <li>Eleição para representante</li>
-              <li>Eleição para representante</li>
-              <li>Eleição para representante</li>
-            </ul>
-          </Card>
-          <Card title="Calendário Acadêmico">
-            <ul>
-              <li>23/04 - Aplicação P1</li>
-              <li>23/04 - Aplicação P1</li>
-              <li>23/04 - Aplicação P1</li>
-            </ul>
-          </Card>
-          <Card title="Minhas disciplinas">
-            <ul>
-              <li>Construção de frontend</li>
-              <li>Construção de frontend</li>
-              <li>Construção de frontend</li>
-            </ul>
-          </Card>
-        </section>
+      <Layout title="Olá, aluno" subtitle="Bem-vindo ao portal do aluno">
+        <Card title="Mural de Avisos" items={avisos} />
+        <Card title="Calendário Acadêmico" items={datas} />
+        <Card title="Minhas Disciplinas" items={disciplinas} />
       </Layout>
     </>
   );
 }
-export default Dashboard
+export default Dashboard;

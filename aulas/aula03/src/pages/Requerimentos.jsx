@@ -1,15 +1,12 @@
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import TableCard from "../components/TableCard";
+import Layout from "./Layout";
 
 function Requerimentos() {
   return (
     <>
-      <Sidebar />
-      <main className="p-4">
-        <Topbar />
-        <h2>Meus Requerimentos</h2>
-        <section></section>
-      </main>
+      <Layout title="Meus Requerimentos" subtitle="Faça solicitações online para a secretaria">
+        <TableCard />
+      </Layout>
     </>
   );
 }

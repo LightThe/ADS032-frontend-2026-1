@@ -3,10 +3,10 @@ import Menu from './Menu';
 
 function Sidebar() {
   return (
-    <aside className="bg-gray-200 hidden dark:bg-gray-600 md:block p-8">
-      <header>
+    <aside className="bg-surface-container text-on-surface-variant hidden md:block p-8">
+      <header className='flex items-center'>
         <img src={logo} alt="Logo da aplicação" />
-        <h1>Aluno Online</h1>
+        <h1 className='text-4xl font-bold'>Aluno Online</h1>
       </header>
       <Menu />
     </aside>

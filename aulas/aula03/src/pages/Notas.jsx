@@ -1,15 +1,14 @@
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Layout from "./Layout";  
+import TableCard from "../components/TableCard";
 
 function Notas() {
   return (
     <>
-      <Sidebar />
-      <main className="p-4">
-        <Topbar />
-        <h2>Minhas Notas</h2>
-        <section></section>
-      </main>
+      <Layout title="Minhas Notas" subtitle="Histórico de Notas por semestre">
+        <TableCard />
+        <TableCard />
+        <TableCard />
+      </Layout>
     </>
   );
 }
