@@ -1,11 +1,12 @@
-export default function Card() {
+export default function Card({title, items}) {
   return (
-    <article className="my-4 border border-gray-200 rounded-xl">
-      <h3 className="text-lg bg-gray-200 rounded-t-xl p-1 font-bold">Minhas disciplinas</h3>
-      <ul className="p-2">
-        <li>BI e Data Warehousing</li>
-        <li>Construção de Frontend</li>
-        <li>Projeto de Extensão</li>
+
+    <article className="rounded-xl my-2 hover:shadow-sm border border-gray-300">
+      <h3 className='bg-gray-300 text-xl font-bold p-2 rounded-t-xl'>{title}</h3>
+      <ul className="p-4">
+        {items.map((item, index)=>(
+          <li key={index}>{item}</li>
+        ))}
       </ul>
     </article>
   );

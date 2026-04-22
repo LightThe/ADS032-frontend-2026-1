@@ -1,19 +1,21 @@
 import Sidebar from "../components/Sidebar";
+import SidebarLayout from "../components/SidebarLayout";
 import TableCard from "../components/TableCard";
 import Topbar from "../components/Topbar";
 
 function Requerimentos() {
+  const colunas = ["Tipo de Requerimento", "Data de solicitação", "Situação"];
+  const requerimentos = [
+    { tipoRequerimento: "Revisão de Menção", dataSolicitacao: "15/12/2025", situacao: "Indeferido" },
+    { tipoRequerimento: "Dispensa de Disciplina", dataSolicitacao: "12/06/2025", situacao: "Indeferido" },
+    { tipoRequerimento: "Trancamento de Matrícula", dataSolicitacao: "05/01/2024", situacao: "Deferido" },
+    { tipoRequerimento: "Mudança de Turno", dataSolicitacao: "10/10/2023", situacao: "Deferido" },
+    { tipoRequerimento: "Renovação de Matrícula", dataSolicitacao: "20/02/2023", situacao: "Deferido" }
+  ];
   return (
-    <>
-      <Sidebar />
-      <main className="flex-1 m-4">
-        <Topbar />
-        <h2 className="text-2xl">Faça solicitações online para a secretaria</h2>
-        <section>
-          <TableCard />
-        </section>
-      </main>
-    </>
+    <SidebarLayout>
+      <TableCard headers={colunas} items={requerimentos}/>
+    </SidebarLayout>
   );
 }
 

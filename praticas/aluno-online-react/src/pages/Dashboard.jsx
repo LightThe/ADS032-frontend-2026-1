@@ -1,21 +1,27 @@
 import Card from "../components/Card";
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import SidebarLayout from "../components/SidebarLayout";
 
 function Dashboard() {
+  const avisos = [
+    "Inscrição para o projeto de extensão",
+    "Eleição para representante de turma",
+  ];
+
+  const datas = [
+    "23/02 - Início do período letivo 2026-1",
+    "25/04 - Prazo final para aplicação da P1",
+    "23/06 - Prazo final para aplicação da P2",
+    "04/07 - Fim do período letivo 2026-1",
+  ];
+
+  const disciplinas = ["Construção de Frontend", "BI e Data Warehousing"];
+
   return (
-    <>
-      <Sidebar />
-      <main className="flex-1 m-4">
-        <Topbar />
-        <h2 className="text-2xl">Bem-vindo ao portal do aluno</h2>
-        <section>
-          <Card />
-          <Card />
-          <Card />
-        </section>
-      </main>
-    </>
+    <SidebarLayout>
+      <Card title="Mural de Avisos" items={avisos} />
+      <Card title="Calendário Acadêmico" items={datas} />
+      <Card title="Minhas Disciplinas" items={disciplinas} />
+    </SidebarLayout>
   );
 }
 

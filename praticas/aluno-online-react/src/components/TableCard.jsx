@@ -1,39 +1,25 @@
-export default function TableCard() {
+export default function TableCard({ headers, title, items }) {
   return (
-    <article className="my-4 border border-gray-200 rounded-xl">
-      <h3 className="text-lg bg-gray-200 rounded-t-xl p-1 font-bold">2026.1</h3>
-      <table className="p-2 w-full">
-        <thead className="bg-gray-200 p-1 font-bold">
-          <tr>
-            <th>Disciplina</th>
-            <th>A1</th>
-            <th>A2</th>
-            <th>A3</th>
-            <th>Menção</th>
+    <article className="border border-gray-300 rounded-xl my-2 w-full">
+      {title && (
+        <h3 className="bg-gray-300 text-xl font-bold rounded-t-xl p-2">{title}</h3>
+      )}
+      <table className="w-full">
+        <thead>
+          <tr className="bg-gray-300 text-xl font-bold rounded-t-xl">
+            {headers.map((header, index) => (
+              <th key={index}>{header}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="border border-gray-100">BI e Data Warehousing</td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100">SR</td>
-          </tr>
-          <tr className="bg-gray-100">
-            <td className="border border-gray-100">Construção de Frontend</td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100">SR</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-100">Manutenção de Software e Devops</td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100"></td>
-            <td className="border border-gray-100">SR</td>
-          </tr>
+          {items.map((item, idx) => (
+            <tr key={idx} className="even:bg-gray-100">
+              {Object.values(item).map((val, idx) => (
+                <td key={idx} className="p-1 border border-gray-200">{val}</td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </article>
