@@ -17,11 +17,11 @@ function Dashboard() {
   const disciplinas = ["Construção de Frontend", "BI e Data Warehousing"];
 
   return (
-    <SidebarLayout>
+    <>
       <Card title="Mural de Avisos" items={avisos} />
       <Card title="Calendário Acadêmico" items={datas} />
       <Card title="Minhas Disciplinas" items={disciplinas} />
-    </SidebarLayout>
+    </>
   );
 }
 

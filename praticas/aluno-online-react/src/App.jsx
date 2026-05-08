@@ -5,18 +5,21 @@ import Faltas from "./pages/Faltas";
 import Boletos from "./pages/Boletos";
 import Requerimentos from "./pages/Requerimentos";
 import Login from "./pages/Login";
+import { Route, Routes } from "react-router";
+import SidebarLayout from "./components/SidebarLayout";
 
 function App() {
-  const pagina = 0;
   return (
-    <>
-      {pagina == 0 && <Login /> }
-      {pagina == 1 && <Dashboard /> }
-      {pagina == 2 && <Notas /> }
-      {pagina == 3 && <Faltas /> }
-      {pagina == 4 && <Boletos /> }
-      {pagina == 5 && <Requerimentos /> }
-    </>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route element={<SidebarLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="/notas" element={<Notas />} />
+        <Route path="/faltas" element={<Faltas />} />
+        <Route path="/boletos" element={<Boletos />} />
+        <Route path="/requerimentos" element={<Requerimentos />} />
+      </Route>
+    </Routes>
   );
 }
 

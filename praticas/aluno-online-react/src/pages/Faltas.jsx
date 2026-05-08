@@ -18,10 +18,10 @@ function Faltas() {
     { disciplina: "Gerenciamento de Projetos", faltas: "0", presenca: "100%" },
   ]
   return (
-    <SidebarLayout>
+    <>
       <TableCard title="2026.1" headers={colunas} items={faltas20261}/>
       <TableCard title="2025.2" headers={colunas} items={faltas20252}/>
-    </SidebarLayout>
+    </>
   );
 }
 
