@@ -1,4 +1,5 @@
 import error from "../assets/PAGERROR.GIF";
+import network from "../assets/LINK.GIF";
 import "./Erro404.css";
 
 export default function Erro404() {
@@ -14,7 +15,7 @@ export default function Erro404() {
         your browser settings.
       </p>
       <section>
-        <img src="" alt="" />
+        <img src={network} alt="Problemas de conectividade" />
         <p>
           To attempt fixing network connectivity problems, click Tools, and then
           click "Diagnose Connection Problems..."
