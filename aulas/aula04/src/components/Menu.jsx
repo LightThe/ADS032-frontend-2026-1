@@ -1,10 +1,9 @@
 import { Link, NavLink } from "react-router";
 import "./Menu.css";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Menu() {
-  const {logout, usuario} = useContext(AuthContext);
+  const {logout, usuario} = useAuth();
 
   return (
     <nav>
@@ -24,7 +23,7 @@ export default function Menu() {
           <NavLink to="/settings">Configurações</NavLink>
         </li>
         <li>
-          <Link to="/" onClick={logout}>Sair</Link>
+          <Link to="/login" onClick={logout}>Sair</Link>
         </li>
       </ul>
     </nav>
