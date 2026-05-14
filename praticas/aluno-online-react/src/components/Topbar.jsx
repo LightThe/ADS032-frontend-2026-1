@@ -4,7 +4,7 @@ function Topbar() {
   return (
     <>
       <header className='flex justify-between'>
-        <h1 className='text-4xl font-bold'>Olá, aluno!</h1> {/* Se eu tivesse p(rop)s eu passaria elas AQUI heheheh */}
+        <h1 className='text-4xl font-bold'>Olá, aluno!</h1>
         <img src={avatar} alt="Ícone do usuário" />
       </header>
     </>

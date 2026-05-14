@@ -18,10 +18,10 @@ function Notas() {
     { disciplina: "Gerenciamento de Projetos", a1: "7.4", a2: "7.1", a3: "", mencao: "MS" },
   ]
   return (
-    <SidebarLayout>
+    <>
       <TableCard title="2026.1" headers={colunas} items={notas20261} />
       <TableCard title="2025.2" headers={colunas} items={notas20252} />
-    </SidebarLayout>
+    </>
   );
 }
 

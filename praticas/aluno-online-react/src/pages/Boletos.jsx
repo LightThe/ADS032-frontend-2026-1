@@ -21,11 +21,7 @@ function Boletos() {
     { vencimento: "19/01/2027", valor: 500.0, situacao: "A Pagar" },
     { vencimento: "19/02/2027", valor: 500.0, situacao: "A Pagar" },
   ];
-  return (
-    <SidebarLayout>
-      <TableCard headers={colunas} items={boletos} />
-    </SidebarLayout>
-  );
+  return <TableCard headers={colunas} items={boletos} />;
 }
 
 export default Boletos;

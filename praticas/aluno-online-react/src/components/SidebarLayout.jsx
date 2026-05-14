@@ -1,7 +1,8 @@
+import { Outlet } from "react-router";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 
-export default function SidebarLayout({children}) {
+export default function SidebarLayout() {
   return (
     <>
       <Sidebar />
@@ -9,7 +10,7 @@ export default function SidebarLayout({children}) {
         <Topbar />
         <h2 className="text-2xl">Bem-vindo ao portal do aluno</h2>
         <section>
-            {children}
+            <Outlet />
         </section>
       </main>
     </>
