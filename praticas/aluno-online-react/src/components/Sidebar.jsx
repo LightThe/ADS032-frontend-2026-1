@@ -1,6 +1,8 @@
+import { NavLink, Link } from "react-router";
 import logo from "../assets/learn.svg";
 
 function Sidebar() {
+  const activeStyles = ({ isActive }) => (isActive ? "text-blue-600 text-lg" : undefined);
   return (
     <>
       <aside className="hidden md:block bg-gray-100 w-64 p-4">
@@ -10,12 +12,34 @@ function Sidebar() {
         </header>
         <nav>
           <ul className="list-disc m-8 font-bold">
-            <li>Dashboard</li>
-            <li>Notas</li>
-            <li>Faltas</li>
-            <li>Boletos</li>
-            <li>Requerimentos</li>
-            <li>Sair</li>
+            <li>
+              <NavLink className={activeStyles} to="/">
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={activeStyles} to="/notas">
+                Notas
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={activeStyles} to="/faltas">
+                Faltas
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={activeStyles} to="/boletos">
+                Boletos
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={activeStyles} to="/requerimentos">
+                Requerimentos
+              </NavLink>
+            </li>
+            <li>
+              <Link to="/login">Sair</Link>
+            </li>
           </ul>
         </nav>
       </aside>
