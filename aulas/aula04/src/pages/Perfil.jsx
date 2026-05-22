@@ -27,10 +27,10 @@ export default function Perfil() {
     nascimento: {
       validate: {
         minDate: (value) =>
-          Date.parse(value) >= new Date(1900, 0, 1).getTime() ||
+          Date.parse(value) >= new Date("01/01/1900 00:00:00 UTC").getTime() ||
           "Data inválida",
         maxDate: (value) =>
-          Date.parse(value) < new Date().getTime() || "Data inválidate",
+          Date.parse(`${value} 00:00:00 UTC`) < new Date().getTime() || "Data inválidate",
       },
     },
     telefone: {
