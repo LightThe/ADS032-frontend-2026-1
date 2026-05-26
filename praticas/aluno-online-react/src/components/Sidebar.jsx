@@ -1,8 +1,12 @@
 import { NavLink, Link } from "react-router";
 import logo from "../assets/learn.svg";
+import useAuth from "../hooks/useAuth";
 
 function Sidebar() {
+  const {logout} = useAuth();
+
   const activeStyles = ({ isActive }) => (isActive ? "text-blue-600 text-lg" : undefined);
+  
   return (
     <>
       <aside className="hidden md:block bg-gray-100 w-64 p-4">
@@ -38,7 +42,7 @@ function Sidebar() {
               </NavLink>
             </li>
             <li>
-              <Link to="/login">Sair</Link>
+              <Link to="/login" onClick={logout}>Sair</Link>
             </li>
           </ul>
         </nav>

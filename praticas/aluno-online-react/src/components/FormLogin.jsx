@@ -2,9 +2,11 @@ import { useState } from "react";
 import InputEmail from "./InputEmail";
 import InputSenha from "./InputSenha";
 import BotaoSubmit from "./BotaoSubmit";
+import { useNavigate } from "react-router";
+import useAuth from "../hooks/useAuth";
 
 function validarEmail(email) {
-    // SIM (desculpa)
+  // SIM (desculpa)
   return email.match(
     /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-.]*)[a-z0-9_'+-]@([a-z0-9][a-z0-9-]*\.)+[a-z]{2,}$/i,
   );
@@ -15,6 +17,8 @@ export default function FormLogin() {
   const [senha, setSenha] = useState();
   const [emailErro, setEmailErro] = useState();
   const [senhaErro, setSenhaErro] = useState();
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -28,19 +32,28 @@ export default function FormLogin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(email){
-        if (!validarEmail(email)) {
-          setEmailErro("Insira um e-mail válido");
-        }
-    }
-    else{
-        setEmailErro("E-mail é obrigatório")
+    let canLogin = true;
+
+    if (!email) {
+      setEmailErro("E-mail é obrigatório");
+      canLogin = false;
     }
     if (!senha) {
       setSenhaErro("Senha é obrigatório");
+      canLogin = false;
     }
-    else if (senha.length < 6) {
-        setSenhaErro("A senha deve ter no mínimo 6 caracteres");
+    if (!validarEmail(email)) {
+      setEmailErro("Insira um e-mail válido");
+      canLogin = false;
+    }
+    if (senha.length < 6) {
+      setSenhaErro("A senha deve ter no mínimo 6 caracteres");
+      canLogin = false;
+    }
+
+    if(canLogin){
+      login();
+      navigate("/");
     }
   };
 
