@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router";
 import Sidebar from "../components/Sidebar";
 import SidebarLayout from "../components/SidebarLayout";
 import TableCard from "../components/TableCard";
 import Topbar from "../components/Topbar";
 
 function Requerimentos() {
+  const navigate = useNavigate();
   const colunas = ["Tipo de Requerimento", "Data de solicitação", "Situação"];
   const requerimentos = [
     {
@@ -32,7 +34,15 @@ function Requerimentos() {
       situacao: "Deferido",
     },
   ];
-  return <TableCard headers={colunas} items={requerimentos} />;
+  return (
+    <>
+      <button className="border-blue-800 border-2 py-2 px-4 rounded mt-4" onClick={() => navigate("/requerimentos/novo")}>
+        ➕ Novo Requerimento
+      </button>
+      <h2 className="text-2xl mt-8">Meus requerimentos</h2>
+      <TableCard headers={colunas} items={requerimentos} />
+    </>
+  );
 }
 
 export default Requerimentos;

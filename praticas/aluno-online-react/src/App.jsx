@@ -7,6 +7,7 @@ import Requerimentos from "./pages/Requerimentos";
 import Login from "./pages/Login";
 import { Route, Routes } from "react-router";
 import SidebarLayout from "./components/SidebarLayout";
+import RequerimentoForm from "./forms/RequerimentoForm";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
         <Route path="/notas" element={<Notas />} />
         <Route path="/faltas" element={<Faltas />} />
         <Route path="/boletos" element={<Boletos />} />
-        <Route path="/requerimentos" element={<Requerimentos />} />
+        <Route path="/requerimentos">
+          <Route index element={<Requerimentos />} />
+          <Route path="novo" element={<RequerimentoForm />} />
+        </Route>
       </Route>
     </Routes>
   );
