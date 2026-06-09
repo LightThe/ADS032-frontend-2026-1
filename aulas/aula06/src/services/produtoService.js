@@ -16,9 +16,9 @@ async function criar(produto) {
     }
 }
 
-async function obter(produto) {
+async function obter(idPproduto) {
     try {
-        const resposta = await fetch(`${url}/${produto.id}`);
+        const resposta = await fetch(`${url}/${idPproduto}`);
         const dados = await resposta.json();
         return dados;
     } catch (erro) {
@@ -52,9 +52,9 @@ async function modificar(produto) {
     }
 }
 
-async function remover(produto) {
+async function remover(id) {
     try {
-        const resposta = await fetch(`${url}/${produto.id}`, {
+        const resposta = await fetch(`${url}/${id}`, {
             method: 'DELETE'
         })
         return resposta.ok;

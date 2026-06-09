@@ -1,5 +1,24 @@
 {
-  "produtos": [],
+  "produtos": [
+    {
+      "id": "nvaYtPjo5TI",
+      "nome": "Banana",
+      "preco": "2.50",
+      "unidade": "kg"
+    },
+    {
+      "nome": "Ford Fiesta",
+      "preco": "15",
+      "unidade": "Un",
+      "id": "l4sHYtDbc8Q"
+    },
+    {
+      "nome": "teste",
+      "preco": "1.50",
+      "unidade": "Coulomb",
+      "id": "rb18DcYTVp0"
+    }
+  ],
   "clientes": [],
   "pedidos": [],
   "fornecedores": [],
