@@ -17,6 +17,12 @@
       "descricao": "declaro que esse trem não tá funcionando",
       "data": "",
       "id": "bnovBd-oiCs"
+    },
+    {
+      "tipo": "declaracao",
+      "descricao": "Declaro que está funcionando novamente. Essa é a declaração",
+      "data": "2026-06-11",
+      "id": "IYnrUQE_9sY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
