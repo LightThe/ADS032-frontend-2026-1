@@ -2,10 +2,13 @@ services:
   app:
     image: node:24
     container_name: aluno-online-react
+    user: 1000:1000
     working_dir: /app
     volumes:
       - ./:/app
     ports:
       - "5173:5173"
+      - "4163:4163"
+      - "3000:3000"
     tty: true
     stdin_open: true

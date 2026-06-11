@@ -3,37 +3,24 @@ import Sidebar from "../components/Sidebar";
 import SidebarLayout from "../components/SidebarLayout";
 import TableCard from "../components/TableCard";
 import Topbar from "../components/Topbar";
+import { useEffect, useState } from "react";
+import { listar } from "../services/requerimentoService";
 
 function Requerimentos() {
+  const [requerimentos, setRequerimentos] = useState([]);
   const navigate = useNavigate();
   const colunas = ["Tipo de Requerimento", "Data de solicitação", "Situação"];
-  const requerimentos = [
-    {
-      tipoRequerimento: "Revisão de Menção",
-      dataSolicitacao: "15/12/2025",
-      situacao: "Indeferido",
-    },
-    {
-      tipoRequerimento: "Dispensa de Disciplina",
-      dataSolicitacao: "12/06/2025",
-      situacao: "Indeferido",
-    },
-    {
-      tipoRequerimento: "Trancamento de Matrícula",
-      dataSolicitacao: "05/01/2024",
-      situacao: "Deferido",
-    },
-    {
-      tipoRequerimento: "Mudança de Turno",
-      dataSolicitacao: "10/10/2023",
-      situacao: "Deferido",
-    },
-    {
-      tipoRequerimento: "Renovação de Matrícula",
-      dataSolicitacao: "20/02/2023",
-      situacao: "Deferido",
-    },
-  ];
+
+  useEffect(()=>{
+    const obterRequerimentos = async () => {
+      const res = await listar();
+      setRequerimentos(res.map((item)=>{
+        return {tipo: item.tipo, data: item.data, situacao: "criado"}
+      }));
+    }
+    obterRequerimentos();
+  }, []);
+
   return (
     <>
       <button className="border-blue-800 border-2 py-2 px-4 rounded mt-4" onClick={() => navigate("/requerimentos/novo")}>

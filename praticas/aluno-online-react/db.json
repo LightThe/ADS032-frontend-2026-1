@@ -1,0 +1,23 @@
+{
+  "requerimentos": [
+    {
+      "tipo": "trancamento",
+      "descricao": "teste 12345",
+      "data": "2026-06-10",
+      "id": "DjODWl3m_kg"
+    },
+    {
+      "tipo": "declaracao",
+      "descricao": "preciso da declaração de matricula pra pode rentrar em casa",
+      "data": "",
+      "id": "gdGAYQ359gM"
+    },
+    {
+      "tipo": "declaracao",
+      "descricao": "declaro que esse trem não tá funcionando",
+      "data": "",
+      "id": "bnovBd-oiCs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
