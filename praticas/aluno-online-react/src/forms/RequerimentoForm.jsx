@@ -1,8 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-
-// Firulas
-import { ToastContainer, toast } from 'react-toastify';
+import { criar } from "../services/requerimentoService";
 
 export default function RequerimentoForm() {
 
@@ -10,17 +8,17 @@ export default function RequerimentoForm() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
 
-  const salvar = (data) => {
-    console.log(data);
-    toast.success("Requerimento salvo com sucesso!");
-    reset();
-    setTimeout(() => {
+  const salvar = async (requerimento) => {
+    try {
+      const resposta = await criar(requerimento);
+      console.log(resposta);
       navigate("/requerimentos");
-    }, 3000);
+    } catch (error) {
+      console.error("Erro ao salvar requerimento:", error);
+    }
   };
 
   const regras = {
@@ -78,6 +76,7 @@ export default function RequerimentoForm() {
         />
         <div className="flex gap-4 mt-4">
           <button
+            type="button"
             className="bg-red-800 text-white py-2 px-4 rounded"
             onClick={() => navigate("/requerimentos")}
           >
@@ -91,7 +90,6 @@ export default function RequerimentoForm() {
           </button>
         </div>
       </form>
-      <ToastContainer autoClose={2000} />
     </>
   );
 }
